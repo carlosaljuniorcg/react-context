@@ -5,17 +5,15 @@ import UsuarioProvider from 'common/contexts/Usuario';
 import CarrinhoProvider from 'common/contexts/Carrinho';
 import Carrinho from 'pages/Carrinho';
 import { PagamentoProvider } from 'common/contexts/Pagamento';
-import { useState } from 'react';
 
-function Routes() {
-  const [nome, setNome] = useState("");
+export default function Routes() {
   return (
     <Router>
       <Switch>
         <PagamentoProvider>
           <UsuarioProvider>
             <Route exact path="/">
-              <Login nome={nome} setNome ={setNome}/>
+              <Login />
             </Route>
             <CarrinhoProvider>
               <Route path="/feira">
